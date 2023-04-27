@@ -1,0 +1,44 @@
+﻿
+@{
+    ViewBag.Title = "Liste_Voiture";
+    Layout = "~/Views/Shared/_dashboardPropr.cshtml";
+}
+@{ 
+    List<Voiture> voitures = ViewBag.voitures;
+} 
+<div class="container Account_info list-voiture">
+    <div class="row">
+        <h2> Liste des voitures</h2>
+    </div>
+    @{
+        int k = 0;
+        int i = 0;
+    }
+    @while (k < voitures.Count)
+    {
+        <div class="row justify-content-start">
+            @for (i = 0; i < 3 && k < voitures.Count; i++)
+            {
+                <div class=" col-md-4" style="padding :  1rem 2.5rem">
+                    <div class="card ">
+                        <div class="card-product-img"
+                             style="background: url('../../Content/Images/Voiture/@voitures[k].Image') bottom no-repeat; background-size: contain; ">
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">@voitures[k].Nom</h5>
+                            <p class="card-text">
+                                Marque : @voitures[k].Marque<br />
+                                Prix :@voitures[k].Prix DH
+                            </p>
+                            <a class="btn btn-light" href=@Url.Action("Index","Voiture", new { VoitureId = voitures[k].Id })>voir</a>
+                            <a class="btn btn-secondary" href=@Url.Action("Update_voiture","Proprietaire",new { VoitureId = voitures[k].Id })>Modifier</a>
+                            <a class="btn btn-dark" href=@Url.Action("Delete","Proprietaire",new { VoitureId = voitures[k].Id })>Supprimer</a>
+                        </div>
+                    </div>
+                </div>
+                k++;
+            }
+        </div>
+    }
+</div>
+

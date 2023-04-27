@@ -1,0 +1,125 @@
+﻿
+@{
+    ViewBag.Title = "Reserver";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    User u = ViewBag.user;
+    Voiture v = ViewBag.voiture;
+
+}
+@if (Model)
+{
+    <div class="alert alert-success fade show" role="alert">
+        Votre réservation est  <strong>validé</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+
+<div class="center-Card" style=" background-color:white">
+    <div class="card-item" style="width: 70%;">
+        <div class="row row-space">
+            <div class="col-md-12">
+
+                <div class="row row-space">
+                    <div class="col-lg-3">
+                        <div class="reserv-Item-img"
+                             style="width : 100% ; height: 120px; border-radius:1rem ;
+                            background: url('../../Content/Images/Voiture/@v.Image.Trim()') center no-repeat;
+                            background-size: contain;
+                         ">
+                        </div>
+                    </div>
+                    <div class="col-lg-8">
+                        <br />
+                        <h5> @v.Nom </h5>
+                        <p>@v.Prix <small>dhs/jour</small></p>
+                    </div>
+                </div>
+                <div class="row row-space">
+                    <div class="col-lg-12">
+                        <h1>Reservation</h1>
+                    </div>
+                </div>
+                <div class="row row-space">
+                    <div class="col-lg-12">
+                        <form method="post" action=@Url.Action("Reserver","Voiture")>
+                            <div class="row row-space">
+
+                                <div class="col-lg-6">
+                                    <label for="Name">Votre Nom  </label>
+                                    <input type="text" name="nom" class="form-control" value="@u.Name" />
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <label for="Price">Email </label>
+                                    <input type="email" name="email" class="form-control" value="@u.Email" />
+
+                                </div>
+
+                            </div>
+                            <div class="row row-space">
+
+                                <div class="col-lg-6">
+                                    <label for="Name">Phone  </label>
+                                    <input type="text" name="phone" class="form-control" value=" @u.Phone " />
+
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Addresse </label>
+                                    <input type="text" name="addresse" class="form-control" value="@u.Address " />
+
+                                </div>
+
+                            </div>
+                            <div class="row row-space">
+
+                                <div class="col-lg-6">
+                                    <label for="Price">Price (dhs) </label>
+                                    <select name="paiement" class="custom-select ">
+                                        <option value="carte" selected>paiement par carte  </option>
+                                        <option value="espece">paiement par espèce</option>
+                                    </select>
+                                </div>
+                                <div class="col-lg-6">
+                                    <label>Nbr de jour resevation </label>
+                                    <input type="number" name="jours" class="form-control" />
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-lg-6">
+
+                                    <label for="Name">Date de resevation  </label>
+                                    <div>
+                                        <input name="date" type="date" class="form-control" />
+                                    </div>
+
+                                </div>
+                                <div class="col-lg-2">
+                                    <div>
+                                        <input type="hidden" name="voitureId" value="@v.Id" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row row-space">
+                                <div class="col-lg-12">
+                                    <button type="submit" class="btn btn-red">Submit</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+
+
+
+    </div>
+</div>
+

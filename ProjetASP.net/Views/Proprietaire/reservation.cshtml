@@ -1,0 +1,81 @@
+﻿@using ProjetASP.net.Models;
+@{
+    ViewBag.Title = "reservation";
+    Layout = "~/Views/Shared/_dashboardPropr.cshtml";
+    List<Voiture_info> info = ViewBag.Reservations;
+}
+<div class="container Account_info">
+    @if (info.Count() != 0)
+    {
+        <div class="row">
+            <h2> Les Reservations</h2>
+        </div>
+        <div class="">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Voiture</th>
+                            <th scope="col">Locataire</th>
+
+                            <th scope="col">Paiement</th>
+                            <th scope="col">Etat de réservation</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Voiture_info res in info)
+                        {
+                            <tr>
+                                <td scope="row">
+                                    de <br />
+                                    @res.reservation.DateDebut.Value.ToString("dd/MM/yyyy")
+                                    <br />
+                                    à
+                                    <br />
+                                    @res.reservation.DateFin.Value.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @res.voiture.Marque<br />
+                                    @res.voiture.Nom<br />
+                                    <small>@res.voiture.Prix DH/jr</small>
+                                </td>
+                                <td>
+                                    @res.reservation.Nom <br />
+                                    @res.reservation.Adresse<br />
+                                    <small>Téléphone :@res.reservation.Phone</small>
+                                </td>
+
+                                <td>
+                                    @res.reservation.Paiment<br />
+                                </td>
+                                <th scope="col">
+                                    @if (res.reservation.Status == 0)
+                                    {
+                                        <strong>En cours</strong>
+                                        <br />
+                                        <a class="btn btn-outline-success btn-sm" href="@Url.Action("Valider","Proprietaire",new { resId = res.reservation.Id })">Valider </a>
+                                        <a class="btn btn-outline-danger btn-sm" href="@Url.Action("Supprimer","Proprietaire",new { resId =  res.reservation.Id  })">Supprimer </a>
+                                    }
+                                    else if (res.reservation.Status == 1)
+                                    {
+                                        <strong>Validée</strong>
+                                    }
+                                    else if (res.reservation.Status == -1)
+                                    {
+                                        <strong>Annulée</strong>
+                                    }
+
+                                </th>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>Aucune reservation à afficher</p>
+    }
+</div>

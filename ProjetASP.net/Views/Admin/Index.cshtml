@@ -1,0 +1,94 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_dashboardAdmin.cshtml";
+}
+
+
+<div class="container Account_info">
+
+    <div class="row">
+        <div class="col-7">
+            <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+            <script type="text/javascript">
+                google.charts.load("current", { packages: ["corechart"] });
+                google.charts.setOnLoadCallback(drawChart);
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Le Role', 'Nombre d\'utilisateurs'],
+                        ['Proprietaire', @ViewBag.nbrPropUser],
+                        ['Locataire', @ViewBag.nbrLocataireUser],
+
+                    ]);
+
+                    var options = {
+                        title: 'Nombre d\'utilisateurs',
+                        pieHole: 0.4,
+                        pieSliceTextStyle: {
+                            color: 'black',
+                        },
+
+                    };
+
+                    var chart = new google.visualization.PieChart(document.getElementById('donutchart'));
+                    chart.draw(data, options);
+                }
+            </script>
+            <div id="donutchart" class="stat-card" style=" height: 400px;"></div>
+
+        </div>
+        <br />
+        <br />
+        <div class="col-5 ">
+
+            <div class="col-12 stat-card " style=" height: 190px;">
+
+                <p style="text-align:center ;margin-top:40px">
+                    <span style="font-size:3rem ; margin-right:2rem">@ViewBag.nbrAllUser</span> Le totale des user
+                </p>
+
+
+            </div>
+
+            <div class="col-12 stat-card " style=" height: 190px;">
+                <p style="text-align:center ;margin-top:40px">
+                    <span style="font-size:3rem ; margin-right:2rem">
+                        @ViewBag.nbrReservation
+                    </span>
+                    Le totale des resevation
+                </p>
+            </div>
+
+
+        </div>
+        <div class="col-12">
+
+            <script type="text/javascript">
+                google.charts.load('current', { 'packages': ['corechart'] });
+                google.charts.setOnLoadCallback(drawChart);
+
+                function drawChart() {
+                    var data = google.visualization.arrayToDataTable([
+                        ['Date', 'Resevation'],
+                        ['2013', 1000],
+                        ['2014', 1170],
+                        ['2015', 660],
+                        ['2016', 1030]
+                    ]);
+
+                    var options = {
+                        title: 'Les resevtion dans ce mois  ',
+                        hAxis: { title: 'date', titleTextStyle: { color: '#111' } },
+                        vAxis: { minValue: 0 }
+                    };
+
+                    var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                    chart.draw(data, options);
+                }
+
+            </script>
+            <div id="chart_div" class="stat-card" style=" height: 400px;"></div>
+
+        </div>
+    </div>
+</div>

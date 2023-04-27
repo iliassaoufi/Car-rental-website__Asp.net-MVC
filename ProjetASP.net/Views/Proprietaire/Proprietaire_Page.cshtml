@@ -1,0 +1,59 @@
+﻿
+@{
+    ViewBag.Title = "Proprietaire_Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    User prop = ViewBag.prop;
+
+}
+
+<section class=" Proprietaire_info">
+    <div class="container ">
+        <div class="row container-voiture">
+            <div class="col-md-5 container-voiture-img">
+                <div class="voiture-img"
+                     style="
+        background: url('../../Content/Images/Global/undraw_male_avatar_323b.png') bottom no-repeat;
+        background-size: cover;
+    ">
+                </div>
+            </div>
+            <div class="col-md-6 voiture-content">
+                <h2>@prop.Name</h2>
+
+                <hr />
+                <div class="voiture-caracter">
+                    <p><span>Contact :</span> @prop.Phone </p>
+                    <p><span>Email :</span> @prop.Email </p>
+                    <p><span>Adresse :</span>  @prop.Address  </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section>
+
+    <div class="container ">
+
+        <br />
+        <h2 style="text-align : center ; font-size : 2.2rem"> Nos Voitures  </h2>
+        <br />
+        <div class="row justify-content-lg-start">
+            @foreach (ProjetASP.net.Models.Voiture_info item in ViewBag.listVoiture_prop)
+            {
+
+
+                <div class=" col-md-3">
+                    @Html.Partial("_VoitureCard", item)
+                </div>
+            }
+        </div>
+    </div>
+</section>
+<br />
+<br />
+<br />
+<br />
+
+
+

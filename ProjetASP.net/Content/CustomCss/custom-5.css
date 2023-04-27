@@ -1,0 +1,22 @@
+﻿/*******************************/
+.stat-card {
+    margin: 1rem auto;
+    border: 2px solid #cd6155;
+    padding: 11px;
+    border-radius: 40px;
+}
+
+.stattt-content {
+    width: 80%;
+    height: 100px;
+}
+
+    .stattt-content p {
+        margin-top: 50rem;
+        text-align: center;
+        color: #641e16;
+    }
+
+        .stattt-content p span {
+            font-size: 5rem;
+        }

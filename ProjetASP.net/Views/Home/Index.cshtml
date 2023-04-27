@@ -1,0 +1,95 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<section>
+    <div class="s1">
+        <div class="s1-bg">
+            <img src="~/Content/Images/Global/undraw_navigator_a479(2).svg" />
+        </div>
+        <div class="s1-content ">
+            <h2>CarBooking</h2>
+            <p>
+                CarBooking, leader mondial de la location de voitures,
+                vous propose ses services au Maroc . Nous vous garantissons un large choix de voitures de location et véhicules
+                utilitaires. Mini, citadine, compactes, de prestige, SUV ou 4x4, véhicules diesel ou essence.
+                CarBooking a nécessairement la réponse à votre besoin à des prix pas cher.
+                vivez une expérience agréable avec CarBooking.
+            </p>
+            <form action="/Voiture/ListVoiture" method="post">
+                <div class="input-group">
+
+                    <input name="TextRecherche" placeholder="" type="text" class="form-control form-search" aria-label="Text input with dropdown button">
+                    <select name="RecherchePar" class="custom-select form-search">
+
+                        <option value="Nom" selected>Nom de voiture</option>
+                        <option value="Marque">Marque</option>
+                        <option value="Couleur">Couleur</option>
+                        <option value="Annee">Année</option>
+                        <option value="Km">Km</option>
+                        <option value="Proprietaire">Nom de propriétaire    </option>
+                    </select>
+                    <div class="input-group-append">
+                        <button class="btn form-search" type="submit">
+                            <span class="Nan-icon">
+                                <i class="bi bi-search"></i>
+                            </span>
+                        </button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+</section>
+<section>
+    <div class="s2 container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 ">
+                <h2> Offre Spéciales </h2>
+
+            </div>
+        </div>
+        <div class="row">
+
+            @if (Model != null)
+            {
+                foreach (ProjetASP.net.Models.Voiture_info item in Model)
+                {
+                    <div class="col-md-3">
+                        @Html.Partial("_VoitureCard", item)
+                    </div>
+                }
+            }
+            else
+            {
+                <h3>vide</h3>
+            }
+
+
+        </div>
+    </div>
+</section>
+
+<section>
+    <div class="s3">
+        <div class="s3-bg">
+            <img src="~/Content/Images/Global/undraw_city_driver_jh2h.svg" />
+        </div>
+        <div class="s3-content">
+            <h2>Lorem ipsum dolor consectetur</h2>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Doloremque molestiae magni incidunt blanditiis reiciendis,
+                magnam ex vel dolorem voluptate id ducimus. Placeat porro doloribus
+                cumque veniam hic atque quas maiores.
+            </p>
+            <div class="s3-link">
+                <a href="~/Home/Contact" class="btn btn-1">Contatez nous</a>
+                <a href="~/Home/About" class="btn btn-2">A propos</a>
+            </div>
+        </div>
+    </div>
+</section>

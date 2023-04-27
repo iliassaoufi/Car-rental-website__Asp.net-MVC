@@ -1,0 +1,61 @@
+﻿@model IEnumerable<ProjetASP.net.Models.Voiture_info>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ProjetASP.net.Models.Voiture_info info = (ProjetASP.net.Models.Voiture_info)ViewBag.info;
+}
+
+<section>
+    <div class="container ">
+        <div class="row container-voiture">
+            <div class="col-md-6 container-voiture-img">
+                <div class="voiture-img"
+                     style="
+        background: url('../../Content/Images/Voiture/@info.voiture.Image.Trim()') center no-repeat;
+        background-size: contain;
+    ">
+                </div>
+            </div>
+            <div class="col-md-6 voiture-content">
+                <h2>  @info.voiture.Marque @info.voiture.Nom </h2>
+                <h3> @info.voiture.Prix <small>dhs/jour</small></h3>
+                <hr />
+                <div class="voiture-caracter">
+                    <p><span>la couleur :</span>  @info.voiture.Couleur  </p>
+                    <p><span>Le modéle  :</span>  @info.voiture.Modele </p>
+                    <p><span>La transition  :</span>  @info.voiture.Transition </p>
+                    <p><span>le Km :  </span> @info.voiture.Kilometrage km</p>
+                    <p><span>propriétaire  : </span> @info.user.Name  </p>
+                </div>
+                
+                    <div class="btns">
+                        <a href="~/Voiture/Reserver?id=@info.voiture.Id" class="btn btn-reservation">Réserver la voiture</a>
+                        <a href="~/Proprietaire/Proprietaire_Page?id=@info.voiture.Proprietaire" class="btn btn-proprietaire">Voire le propriétaire</a>
+                    </div>
+                
+            </div>
+        </div>
+    </div>
+</section>
+<section>
+    <br />
+    <br />
+
+    <div class="container ">
+        <hr />
+        <br />
+        <h2 style="text-align : center ; font-size : 2.2rem">Autres Produits </h2>
+        <div class="row justify-content-center">
+            @foreach (ProjetASP.net.Models.Voiture_info item in ViewBag.list)
+            {
+
+
+                <div class=" col-md-3">
+
+                    @Html.Partial("_VoitureCard", item)
+                </div>
+            }
+        </div>
+    </div>
+</section>

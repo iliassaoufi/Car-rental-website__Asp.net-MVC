@@ -1,0 +1,37 @@
+﻿
+@{
+    ViewBag.Title = "Sign In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.error != null)
+{
+    <div class='alert alert-danger' role='alert' style="padding:0;margin:0;border-radius:0px;">@ViewBag.error</div>
+}
+<section>
+    <div class="login-img" style="background: url('../../Content/Images/Global/marvin-meyer-SYTO3xs06fU-unsplash(1).jpg') bottom no-repeat;
+        background-size: cover; ">
+        <div class="login-img-overly">
+
+            <div class="row justify-content-center">
+                <h1>Connectez Comme @ViewBag.role </h1>
+            </div>
+            <div class="login-form container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        <form method="post" action=@Url.Action("SignIn","Login")>
+                            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
+                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                            <input type="hidden" name="role" value="@ViewBag.role" />
+                            <button class="btn  " type="submit">Sign in</button>
+                            @if (@ViewBag.role != "Administrateur")
+                            {
+                                <p>Vous n'avez pas de compte @ViewBag.role ? @Html.ActionLink("créer compte", "SignUp", "Login", new { role = ViewBag.role }, htmlAttributes: new { @class = "btn-link" })</p>
+                            }
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

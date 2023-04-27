@@ -1,0 +1,353 @@
+﻿.ListProprietaire h2 {
+    text-align: center;
+    font-size: 3rem;
+    margin: 4rem auto;
+}
+
+.ListProprietaire .card-product-img {
+    height: 150px;
+    width: 80%;
+    margin: 10%;
+}
+
+.ListProprietaire .card-body .btn {
+    width: 100%;
+    margin: auto 10%;
+    text-align: right;
+    color: #641e16;
+    transition: margin 0.3s ease-in;
+}
+
+    .ListProprietaire .card-body .btn:hover {
+        margin: auto 13%;
+        font-weight: 700;
+    }
+/********************************/
+.Proprietaire_info .voiture-img {
+    margin-top: 2rem;
+    height: 350px;
+    width: 90%
+}
+
+.Proprietaire_info .voiture-content p span {
+    font-size: 1.2rem
+}
+
+/*******************************/
+.menu {
+    background-color: #922b21;
+    min-height: 90vh;
+    color: #fff;
+    padding: 0;
+}
+
+    .menu h2 {
+        margin: 0;
+        padding: 3rem 1rem 4rem 2rem;
+        background-color: #641e16;
+        font-size: 2.5rem;
+        font-weight: 300;
+    }
+
+        .menu h2 small {
+            font-size: 1rem;
+            font-weight: 300;
+        }
+
+    .menu .menu-link {
+        font-size: 1rem;
+        font-weight: 300;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 40vh;
+        position: absolute;
+    }
+
+        .menu .menu-link .btn {
+            display: inline-block;
+            color: #fff;
+            background-color: #7b241c;
+            font-size: 1rem;
+            font-weight: 300;
+            border-radius: 0;
+            width: 100%;
+            padding: 1.3rem 0rem 1.3rem 4rem;
+            transition: all 0.3s ease-in;
+            text-align: start;
+        }
+
+            .menu .menu-link .btn:hover {
+                color: #7b241c;
+                background-color: #fff;
+                font-weight: 700;
+            }
+
+            .menu .menu-link .btn .bi {
+                font-size: 1.5rem;
+                margin-right: 1rem;
+            }
+
+/**********************************************************************/
+.Account_info {
+    padding: 5rem 4rem;
+}
+
+    .Account_info h2 {
+        font-size: 2.5rem;
+        padding-bottom: 2rem;
+        border-bottom: 3px solid #641e16;
+        margin-bottom: 5rem;
+    }
+
+.btn-red {
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 0.8rem 3.5rem;
+    color: #fff;
+    background: #cd6155;
+    transition: all 0.3s ease-in;
+}
+
+    .btn-red:hover {
+        background: #7b241c;
+        color: #fff;
+    }
+
+.Account_info .row {
+    margin-top: 2rem
+}
+
+.Account_info input {
+    margin: 1rem auto;
+    font-size: 1.1rem;
+    padding: 1.3rem 2rem;
+}
+/**********************************************/
+.historique .histo_content .row {
+    width: 80%;
+    background: rgba(100, 30, 22, 0.11);
+}
+
+.historique .histo_content .histo_img {
+    width: 100%;
+    height: 180px;
+}
+/**********************/
+.list-voiture .card-product-img {
+    width: 100%;
+    height: 230px;
+}
+
+.list-voiture .card-body .btn {
+    width: 98%;
+    margin: 0.2rem;
+}
+/*************/
+.Account_info table .btn {
+    padding: 0.5rem 1.3rem
+}
+
+/************************/
+h1, h2, h3, h4, h5, h6, .nav-link, a, button {
+    text-transform: capitalize;
+    font-family: 'Nunito',sans-serif !important;
+}
+
+label::after {
+    content: "  :";
+}
+
+/*************** About ***************/
+.about {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 100px;
+    color: #efefef;
+}
+
+    .about .banner {
+        height: 400px;
+        width: 100%;
+        background: url('../Images/Global/pexels-fauxels-3182759.jpg') no-repeat bottom rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+    }
+
+        .about .banner h2 {
+            text-align: center;
+            padding-top: 110px;
+            font-size: 4rem;
+            color: #fff;
+        }
+
+        .about .banner [class^="bi-"]::before, .about .banner [class*=" bi-"]::before {
+            color: #cfcfcf;
+            font-size: 1.8rem;
+            transition: all 0.5s ease;
+            border: 2px solid #cfcfcf;
+            border-radius: 50%;
+            padding: 0.7rem
+        }
+
+        .about .banner [class^="bi-"]:hover, .about .banner [class*=" bi-"]:hover {
+            transition: all 0.5s ease;
+            font-size: 2rem;
+        }
+
+    .about .bg-img {
+        height: 500px;
+        width: 90%;
+        background: url('../Images/Global/undraw_searching_p5ux.png') no-repeat center;
+        background-size: contain;
+    }
+
+    .about .content {
+        padding-top: 70px;
+        padding-left: 40px;
+    }
+
+        .about .content h2 {
+            color: #922b21;
+            margin-bottom: 2.5rem;
+            font-size: 2rem;
+        }
+
+        .about .content p {
+            font-size: 1.1rem;
+            line-height: 2rem;
+        }
+/*************************************** contact ********************/
+.contact {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 100px
+}
+
+    .contact .banner {
+        height: 400px;
+        width: 100%;
+        background: url('../Images/Global/pexels-jéshoots-4831.jpg') no-repeat center rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+    }
+
+
+
+        .contact .banner h2 {
+            text-align: center;
+            padding-top: 140px;
+            font-size: 4rem;
+            color: #fff;
+        }
+
+
+
+    .contact .bg-img {
+        height: 600px;
+        width: 80%;
+        background: url('../Images/Global/undraw_Profile_data_re_v81r.png') no-repeat center;
+        background-size: contain;
+        border-radius: 2rem;
+    }
+
+    .contact .content {
+        padding-top: 60px;
+        padding-left: 40px;
+    }
+
+        .contact .content h2 {
+            color: #922b21;
+        }
+
+        .contact .content form .form-control {
+            margin: 2.5rem 0 auto;
+            padding: 1.2rem 1.5rem;
+            font-size: 1rem;
+        }
+
+.content .btn {
+    color: #ffffff;
+    margin-top: 30px;
+    padding: 0.8rem 4rem
+}
+
+    .content .btn:hover {
+        background: #808080
+    }
+/**********************/
+.card {
+    padding: 1rem 1rem 0rem 1rem;
+    border: 1px solid rgba(192, 57, 43, 0.30);
+    border-radius: 2.3rem;
+    box-shadow: 5px 8px 38px rgba(128, 128, 128, 0.12)
+}
+
+
+/*******************************/
+.cursor {
+    width: 2rem;
+    height: 2rem;
+    border: 1px solid rgba(100, 30, 22, 0.70);
+    border-radius: 50%;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.3s ease;
+    transition-property: background, transform;
+    transform-origin: 100% 100%;
+    backdrop-filter: invert(5%);
+    /* backdrop-filter: invert(70%);*/
+    z-index: 10;
+}
+
+.cursor-grow {
+    transform: scale(2);
+    backdrop-filter: invert(20%);
+}
+/**************************************************************************/
+
+/**********************************/
+.ListVoiture {
+    margin: 0;
+    padding: 0;
+    margin-bottom: 50px;
+    text-align: center;
+}
+
+    .ListVoiture .banner {
+        height: 500px;
+        width: 100%;
+        background: url('../Images/Global/pexels-alex-azabache-4039921.jpg') no-repeat bottom rgba(0, 0, 0, 0.5);
+        background-size: cover;
+        background-blend-mode: multiply;
+        background-attachment: fixed;
+    }
+
+        .ListVoiture .banner .content {
+        }
+
+            .ListVoiture .banner .content h2 {
+                text-align: center;
+                padding-top: 110px;
+                font-size: 4rem;
+                color: #fff;
+            }
+
+            .ListVoiture .banner .content form .form-control {
+                margin-top: 3rem;
+                width: 100%;
+                font-size: 1.2rem;
+            }
+
+            .ListVoiture .banner .content form .btn {
+                margin: 2rem auto;
+                text-align: center;
+                padding: 0.8rem 6rem;
+            }
+
+                .ListVoiture .banner .content form .btn:hover {
+                    background: #641e16;
+                }

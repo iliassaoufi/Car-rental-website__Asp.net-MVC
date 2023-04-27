@@ -1,0 +1,53 @@
+﻿
+@model IEnumerable<ProjetASP.net.Models.Voiture_info>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section class="ListVoiture">
+
+    <div class="banner">
+        <div class="container content">
+            <h2> list de tous les voiture </h2>
+            <div class="row justify-content-center">
+                <div class="col-5">
+                    <form method="get" action=@Url.Action("ListVoiture","Voiture")>
+                        <input name="dateDispo" type="date" class="form-control" value="@DateTime.Now.Date.ToString("yyyy-MM-dd")" min="@DateTime.Now.Date.ToString("yyyy-MM-dd")">
+                        <button type="submit" class="btn btn-red">Voir</button>
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<br />
+
+<section>
+    <div class="container">
+
+        <br />
+        <div class="row justify-content-start">
+            @if (Model != null)
+            {
+                foreach (ProjetASP.net.Models.Voiture_info item in Model)
+                {
+
+
+                    <div class=" col-md-3">
+                        @Html.Partial("_VoitureCard", item)
+                    </div>
+                }
+            }
+            else
+            {
+                <h3>vide</h3>
+            }
+
+        </div>
+    </div>
+</section>
+

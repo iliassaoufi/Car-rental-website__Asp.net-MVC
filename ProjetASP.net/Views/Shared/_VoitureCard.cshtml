@@ -1,0 +1,22 @@
+﻿@model ProjetASP.net.Models.Voiture_info
+
+<div class="card card-product">
+    <div class="card-product-img"
+         style="background: url('../../Content/Images/Voiture/@Model.voiture.Image.Trim()') center no-repeat; background-size: contain; ">
+    </div>
+    <div class="card-body">
+        <h5 class="card-title">
+            @Model.voiture.Nom <br />
+            <small>
+                @Model.voiture.Prix dh / j
+            </small>
+        </h5>
+        <p class="card-text">
+
+            <i class="bi bi-people-fill"></i>  @Model.user.Name
+        </p>
+
+        <a href="~/Voiture/Index?VoitureId=@Model.voiture.Id" class="btn ">Voir plus <i class="bi bi-chevron-right"></i></a>
+    </div>
+
+</div>

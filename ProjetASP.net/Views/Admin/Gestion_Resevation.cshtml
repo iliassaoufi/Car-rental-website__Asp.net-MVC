@@ -1,0 +1,67 @@
+﻿
+
+@using ProjetASP.net.Models;
+
+@{
+    ViewBag.Title = "Gestion_Resevation";
+    Layout = "~/Views/Shared/_dashboardAdmin.cshtml";
+    List<Voiture_info> info = ViewBag.Reservations;
+}
+
+<div class="container Account_info">
+    @if (info.Count() != 0)
+    {
+        <div class="row">
+            <h2> Les Réservations</h2>
+        </div>
+        <div class="">
+            <div class="table-responsive">
+                <table class="table">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Date</th>
+                            <th scope="col">Voiture</th>
+                            <th scope="col">Locataire</th>
+
+                            <th scope="col">Paiement</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (Voiture_info res in info)
+                        {
+                            <tr>
+                                <td scope="row">
+                                    de
+                                    @res.reservation.DateDebut.Value.ToString("dd/MM/yyyy")
+                                    <br />
+                                    <br />
+                                    à @res.reservation.DateFin.Value.ToString("dd/MM/yyyy")
+                                </td>
+                                <td>
+                                    @res.voiture.Marque<br />
+                                    @res.voiture.Nom<br />
+                                    <small>@res.voiture.Prix DH/jr</small>
+                                </td>
+                                <td>
+                                    @res.reservation.Nom <br />
+                                    @res.reservation.Adresse<br />
+                                    <small>Téléphone :@res.reservation.Phone</small>
+                                </td>
+
+                                <td>
+                                    @res.reservation.Paiment<br />
+                                </td>
+
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    }
+    else
+    {
+        <p>Aucune reservation à afficher</p>
+    }
+</div>

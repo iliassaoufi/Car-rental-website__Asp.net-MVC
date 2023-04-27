@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "_dashboardAdmin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 menu">
+                <div>
+                    <h2>
+                        Dachbord <br />
+                        <small>  Administrateur </small>
+                    </h2>
+                </div>
+                <div class="menu-link">
+                    <a href="~/Admin/Index" class="btn "> Statistiques  </a>
+                    <a href="~/Admin/Gestion_profil" class="btn "> Gestion des profiles  </a>
+                    <a href="~/Admin/Gestion_Voiture" class="btn "> Gestion des voitures  </a>
+                    <a href="~/Admin/Gestion_Resevation" class="btn "> Gestion des resevations </a>
+                    <a href="~/Admin/Gestion_message" class="btn "> Les messages </a>
+                    <a href="~/Login/Logout" class="btn ">
+                        <i class="bi bi-door-closed"></i>  Se déconnecter
+                    </a>
+                </div>
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+</section>
+

@@ -1,0 +1,35 @@
+﻿
+@{
+    ViewBag.Title = "_dashboardUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 menu">
+                <div>
+                    <h2>
+                        Dachbord <br />
+                        <small>  Locataire </small>
+                    </h2>
+                </div>
+                <div class="menu-link">
+                    <a href="~/User/UserInfo" class="btn "> Account Info </a>
+                    <a href="~/User/Historique" class="btn "> Historique </a>
+
+                    <a href="~/Login/Logout" class="btn ">   
+                    <i class="bi bi-door-closed"></i>  Se déconnecter 
+                    </a>
+                 
+
+                    
+                </div>
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+</section>
+
+

@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Proprietaire_Info";
+    Layout = "~/Views/Shared/_dashboardPropr.cshtml";
+    User user = ViewBag.User;
+}
+<div class="container Account_info">
+    <div class="row">
+        <h2> Information du compte</h2>
+    </div>
+    <div class="row  justify-content-start">
+        <div class="col-md-5">
+            <h4>Nom :</h4>
+            <p>@user.Name </p>
+        </div>
+        <div class="col-md-5">
+            <h4>Numéro de telephone :</h4>
+            <p>@user.Phone </p>
+        </div>
+    </div>
+
+    <div class="row  justify-content-start">
+        <div class="col-md-5">
+            <h4>E-mail :</h4>
+            <p>@user.Email</p>
+        </div>
+        <div class="col-md-5">
+            <h4>Adresse :</h4>
+            <p>@user.Address </p>
+        </div>
+    </div>
+    <br />
+    <div class="row  justify-content-start">
+        <div class="col-md-5">
+            <a href="@Url.Action("Update_Proprietaire_Info","Proprietaire",new { Id = user.Id , name = user.Name , email = user.Email , tele = user.Phone , adresse = user.Address })" class="btn btn-red">  Modifier les informations  </a>
+        </div>
+    </div>
+</div>

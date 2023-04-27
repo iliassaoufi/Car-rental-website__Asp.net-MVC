@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="CarRental" Class="DataBaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\CarRental.mdf;Integrated Security=True;MultipleActiveResultSets=True;Application Name=EntityFramework" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="CarRentalConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Messages" Member="Messages">
+    <Type Name="Message">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Description" Type="System.String" DbType="Text NOT NULL" CanBeNull="false" UpdateCheck="Never" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Users" Member="Users">
+    <Type Name="User">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(250) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(500) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Address" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Role" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Status" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Category" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Voiture" Member="Voitures" ThisKey="Id" OtherKey="Proprietaire" Type="Voiture" />
+      <Association Name="User_Reservation" Member="Reservations" ThisKey="Id" OtherKey="Locataire" Type="Reservation" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Voitures" Member="Voitures">
+    <Type Name="Voiture">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="Immatriculation" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Couleur" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Kilometrage" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Modele" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Transition" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Proprietaire" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Offre" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Image" Type="System.String" DbType="VarChar(250)" CanBeNull="true" />
+      <Column Name="Prix" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Marque" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Association Name="Voiture_Reservation" Member="Reservations" ThisKey="Id" OtherKey="Voiture" Type="Reservation" />
+      <Association Name="User_Voiture" Member="User" ThisKey="Proprietaire" OtherKey="Id" Type="User" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Reservations" Member="Reservations">
+    <Type Name="Reservation">
+      <Column Name="Id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Voiture" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Locataire" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="Nom" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="Adresse" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Column Name="DateDebut" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Paiment" Type="System.String" DbType="VarChar(100)" CanBeNull="true" />
+      <Column Name="DateFin" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="Status" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Association Name="User_Reservation" Member="User" ThisKey="Locataire" OtherKey="Id" Type="User" IsForeignKey="true" />
+      <Association Name="Voiture_Reservation" Member="Voiture1" ThisKey="Voiture" OtherKey="Id" Type="Voiture" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,58 @@
+﻿
+@{
+    ViewBag.Title = "UserInfo";
+    Layout = "~/Views/Shared/_dashboardUser.cshtml";
+    User user = Model;
+}
+
+<div class="container Account_info">
+    <div class="row">
+        <h2> Account info </h2>
+    </div>
+    <div class="row  justify-content-start">
+        <div class="col-md-5">
+            <h4>Name :</h4>
+            <p>@user.Name </p>
+        </div>
+        <div class="col-md-5">
+            <h4>Phone :</h4>
+            <p>@user.Phone </p>
+        </div>
+        <div class="col-md-5">
+            <h4>Email :</h4>
+            <p>@user.Email </p>.
+        </div>
+        <div class="col-md-12">
+            <button type="button" class="btn  btn-red" data-toggle="modal" data-target="#modalUpdate">
+                Update info
+            </button>
+
+            <!-- Modal -->
+            <div class="modal fade" id="modalUpdate" tabindex="-1" aria-labelledby="modalUpdate" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <form method="post" action=@Url.Action("UpdateUserInfo","User")>
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Update Account </h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <input type="text" id="inputNome" name="nom" class="form-control" placeholder="Nom complet" value="@user.Name" required>
+                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" value="@user.Email.Trim()" required>
+                                <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" value="@user.Phone.Trim()" pattern="0[6|5][0-9]{8}" required />
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-red">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>

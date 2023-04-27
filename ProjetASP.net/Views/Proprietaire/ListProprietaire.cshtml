@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "ListProprietaire";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container ListProprietaire">
+    <div class="row justify-content-center">
+        <div class="col-md-12 ">
+            <h2>  Tous Les Proprietaire </h2>
+
+        </div>
+    </div>
+    <div class="row">
+        @for (int i = 0; i < 7; i++)
+        {
+            <div class="col-md-4">
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row no-gutters">
+                        <div class="col-md-4">
+                            <div class="card-product-img"
+                                 style="        background: url('../../Content/Images/Global/undraw_male_avatar_323b.png') bottom no-repeat; background-size: cover;">
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title">ILiass el aoufi</h5>
+                                <p class="card-text">
+                                    adresse : fes
+                                    <br />
+                                    contect : +212 6 23584956
+                                </p>
+                                <a href="~/Proprietaire/Proprietaire_Page" class="btn ">Voir plus <i class="bi bi-chevron-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+

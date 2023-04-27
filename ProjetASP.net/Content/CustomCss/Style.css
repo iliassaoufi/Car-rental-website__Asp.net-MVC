@@ -1,0 +1,60 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;700&display=swap');
+
+*, body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Nunito','lato',sans-serif !important;
+    font-weight: 300;
+    /* cursor: none;
+       */
+}
+
+
+
+
+.navbar-brand img {
+    height: 3rem;
+    margin-right: 0.5rem;
+}
+
+.navbar-toggler {
+    background-color: #ffffff;
+    height: 2.5rem;
+    width: 3rem;
+}
+
+.form-control, .custom-select {
+    border-radius: 2rem;
+    padding-left: 1.8rem;
+}
+
+.custom-file-label {
+    border-radius: 100px 30px 30px 100px;
+}
+
+.btn {
+    border-radius: 100px;
+    padding: 0.5rem 2.5rem;
+}
+
+.alert {
+    border-radius: 100px;
+}
+
+.card-item label, p {
+    color: #818181;
+}
+
+.card-item table th {
+    font-size: 1.1rem;
+}
+
+.card-item table td {
+    color: #818181;
+}
+
+/**********************************************/
+
+

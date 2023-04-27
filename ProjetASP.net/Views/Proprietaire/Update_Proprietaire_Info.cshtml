@@ -1,0 +1,41 @@
+﻿
+@{
+    ViewBag.Title = "Update_Proprietaire_Info";
+    Layout = "~/Views/Shared/_dashboardPropr.cshtml";
+    User user = ViewBag.User;
+}
+
+<div class="container Account_info">
+    <form method="post" id="form">
+        <div class="row">
+            <h2>Modifier les informations</h2>
+        </div>
+        <div class="row  justify-content-start">
+            <div class="col-md-5">
+                <label>Nom</label>
+                <input type="text" id="nom" name="nom" class="form-control" value="@user.Name" required />
+            </div>
+            <div class="col-md-5">
+                <label>Numéro de telephone</label>
+                <input type="tel" id="Name" name="tele" class="form-control" value="@user.Phone" pattern="0[6|5][0-9]{8}" required />
+            </div>
+        </div>
+        <div class="row  justify-content-start">
+
+            <div class="col-md-5">
+                <label>E-Mail</label>
+                <input type="email" id="Name" name="email" class="form-control" value="@user.Email" required />
+            </div>
+            <div class="col-md-5">
+                <label>Adresse</label>
+                <input type="text" id="Name" name="adresse" class="form-control" value="@user.Address" required />
+            </div>
+        </div>
+        <br />
+        <div class="row  justify-content-start">
+            <div class="col-md-5">
+                <input type="submit" class="btn btn-red" value="Valider la saisie"/>
+            </div>
+        </div>
+    </form>
+</div>

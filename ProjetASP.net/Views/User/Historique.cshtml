@@ -1,0 +1,39 @@
+﻿
+@model IEnumerable<ProjetASP.net.Models.Voiture_info>
+@{
+    ViewBag.Title = "Historique";
+    Layout = "~/Views/Shared/_dashboardUser.cshtml";
+}
+
+<div class="container Account_info historique">
+    <div class="row">
+        <h2>Historique de resevation</h2>
+    </div>
+
+    <div class=" histo_content">
+        @foreach (ProjetASP.net.Models.Voiture_info item in Model)
+        {
+
+            <div class="row">
+
+                <div class="col-3">
+                    <div class="histo_img" style="    background:url('../../Content/Images/Voiture/@item.voiture.Image') center no-repeat;
+        background-size: contain;">
+                    </div>
+                </div>
+                <div class="col-9 ">
+                    <br />
+                    <p>de @Convert.ToDateTime(item.reservation.DateDebut).ToString("MM/dd/yyyy") à @Convert.ToDateTime(item.reservation.DateFin).ToString("MM/dd/yyyy") </p>
+                    <h4>@item.voiture.Nom </h4>
+                    <p>prix : @item.voiture.Prix <small>dhs/jour</small></p>
+                    <p><span>propriétaire  : </span> @item.user.Name   </p>
+
+                </div>
+
+            </div>
+            <br />
+        }
+
+
+    </div>
+</div>

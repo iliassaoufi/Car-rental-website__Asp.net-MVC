@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Gestion_message";
+    Layout = "~/Views/Shared/_dashboardAdmin.cshtml";
+
+}
+
+
+<div class="container Account_info">
+    <div class="row">
+        <h2>Listes des Messages</h2>
+    </div>
+    <div class="">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col" style=" width:350px">Probleme</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (Message m in Model)
+                    {
+                        <tr>
+                            <td scope="row">
+                                @m.Id
+                            </td>
+                            <td>
+                                @m.Nom
+                            </td>
+                            <td>
+                                @m.Email
+                            </td>
+                            <td>
+                                @m.Description
+                            </td>
+
+
+                        </tr>
+                    }
+
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+

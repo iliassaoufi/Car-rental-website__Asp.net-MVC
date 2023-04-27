@@ -1,0 +1,91 @@
+﻿
+@{
+    ViewBag.Title = "Sign Up";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (ViewBag.error != null)
+{
+    <div class='alert alert-danger' role='alert' style="padding:0;margin:0;border-radius:0px;">@ViewBag.error</div>
+}
+<section>
+    <div class="login-img" style="background: url('../../Content/Images/Global/domenico-loia-hGV2TfOh0ns-unsplash(1)(1).jpg') bottom no-repeat;
+        background-size: cover; ">
+        <div class="login-img-overly">
+
+            <div class="row justify-content-center">
+                <h1>Créer compte @ViewBag.role </h1>
+            </div>
+            <div class="login-form container">
+                <div class="row justify-content-center">
+                    <div class="col-md-7">
+                        @if (ViewBag.role == "Proprietaire")
+                        {
+                            <button type="button" class="btn" data-toggle="modal" data-target="#agence">Agence</button>
+                            <button type="button" class="btn btn-2" data-toggle="modal" data-target="#particulier">Particulier</button>
+                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })">Connexion</a></p>
+                            <div class="modal fade" id="agence" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" style="color : #922b21">Agence</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" action=@Url.Action("RegisterAgency","Login") id="registration">
+                                                <input type="text" name="nomAgence" class="form-control" placeholder="Nom de votre agence" required />
+                                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
+                                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                                                <input type="text" name="adresse" class="form-control" placeholder="Adresse de récupération" required />
+                                                <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
+                                                <input type="hidden" name="role" value="@ViewBag.role" />
+                                                <button class="btn " type="submit">Sign Up</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="modal fade" id="particulier" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h4 class="modal-title" style="color : #922b21">Particulier</h4>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form method="post" action=@Url.Action("RegisterPrivate","Login") id="registration">
+                                                <input type="text" id="inputNome" name="nom" class="form-control" placeholder="Nom complet" required>
+                                                <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
+                                                <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                                                <input type="text" name="adresse" class="form-control" placeholder="Adresse de récupération" required />
+                                                <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
+                                                <input type="hidden" name="role" value="@ViewBag.role" />
+                                                <button class="btn " type="submit">Sign Up</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        }
+                        @if (ViewBag.role == "Locataire")
+                        {
+                        <form method="post" action=@Url.Action("RegisterLocataire","Login") id="registration">
+                            <input type="text" id="inputNome" name="nom" class="form-control" placeholder="Nom complet" required>
+                            <input type="email" id="inputEmail" name="email" class="form-control" placeholder="Email address" required>
+                            <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required>
+                            <input type="tel" name="telephone" class="form-control" placeholder="Numéro de téléphone (+212)" pattern="0[6|5][0-9]{8}" required />
+                            <input type="hidden" name="role" value="@ViewBag.role" />
+                            <button class="btn " type="submit">Sign Up</button>
+                        </form>
+                            <br /><br /><p>Vous avez un compte ? <a href="@Url.Action("SignIn", "Login",new { role = ViewBag.role })">Connexion</a></p>
+                        }
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+

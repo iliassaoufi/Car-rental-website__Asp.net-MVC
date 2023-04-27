@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Gestion_profil";
+    Layout = "~/Views/Shared/_dashboardAdmin.cshtml";
+}
+
+
+
+<div class="container Account_info">
+    <div class="row">
+        <h2>Gestion des profiles</h2>
+    </div>
+    <div class="">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">ID</th>
+                        <th scope="col">UserName</th>
+                        <th scope="col">E-mail</th>
+                        <th scope="col">Rôles</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (User u in Model)
+                    {
+                        <tr>
+                            <td scope="row">
+                                @u.Id
+                            </td>
+                            <td>
+                                @u.Name
+                            </td>
+                            <td>
+                                @u.Email
+                            </td>
+                            <td>
+                                @u.Role
+                            </td>
+
+                            <th scope="col">
+
+                                <a href="~/Admin/Gestion_profil?id=@u.Id&op=fav" class="btn btn-outline-primary btn-sm"> favoris </a>
+                                <a href="~/Admin/Gestion_profil?id=@u.Id&op=noir" class="btn btn-outline-dark btn-sm"> list noir </a>
+                                <a href="~/Admin/Gestion_profil?id=@u.Id&op=sup" class="btn btn-outline-danger btn-sm">Supprimé </a>
+                            </th>
+                        </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,34 @@
+﻿
+@{
+    ViewBag.Title = "Propriétaire";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-3 menu">
+                <div>
+                    <h2>
+                        Panneau <br />
+                        <small> Propriétaire </small>
+                    </h2>
+                </div>
+                <div class="menu-link">
+                    <a href="@Url.Action("reservation","Proprietaire")" class="btn "> Les réservations </a>
+                    <a href="@Url.Action("Liste_Voiture","Proprietaire")" class="btn "> Liste des voitures </a>
+                    <a href="@Url.Action("Ajouter_voiture","Proprietaire")" class="btn "> Ajouter voiture </a>
+                    <a href="@Url.Action("Proprietaire_Info","Proprietaire")" class="btn "> Account info  </a>
+
+                    <a href="~/Login/Logout" class="btn ">
+                        <i class="bi bi-door-closed"></i>  Se déconnecter
+                    </a>
+                </div>
+            </div>
+            <div class="col-9">
+                @RenderBody()
+            </div>
+        </div>
+
+    </div>
+</section>
+
