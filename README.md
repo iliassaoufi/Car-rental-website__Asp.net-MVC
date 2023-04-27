@@ -15,3 +15,5 @@ Agency management: Car rental agencies can create an account on the website and 
 Reporting and analytics: The website can provide agencies with reports and analytics on their performance, such as bookings, revenue, and customer feedback.
 
 Responsive design: The website should be designed to be responsive, so that it can be accessed on different devices, including desktops, laptops, tablets, and smartphones.
+
+Overall, this website would make it easier for visitors to find and book rental cars while also helping car rental agencies manage their inventory and reservations more efficiently.
