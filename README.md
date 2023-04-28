@@ -14,3 +14,19 @@ Here are some features included in the website:
 - Responsive design: The website should be designed to be responsive, so that it can be accessed on different devices, including desktops, laptops, tablets, and smartphones.
 
 > Overall, this website would make it easier for visitors to find and book rental cars while also helping car rental agencies manage their inventory and reservations more efficiently.
+
+
+----------------------
+
+
+
+
+https://user-images.githubusercontent.com/71756594/235040303-44de2ee7-8fb1-47cd-ad51-4ac673a582b8.mp4
+
+
+--------------------
+
+
+
+https://user-images.githubusercontent.com/71756594/235040347-856270cd-4fb4-4982-82b5-59c67a2b1444.mp4
+
